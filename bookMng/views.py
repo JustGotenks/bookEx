@@ -8,10 +8,12 @@ from .models import MainMenu
 from .forms import BookForm
 from django.http import HttpResponseRedirect
 
+from .models import Book
+
 
 def index(request):
     return render(request,
-                  'bookMng/displaybooks.html',
+                  'bookMng/index.html',
                   {
                       'item_list': MainMenu.objects.all()
                   })
@@ -34,5 +36,17 @@ def postbook(request):
                       'form': form,
                       'item_list': MainMenu.objects.all(),
                       'submitted': submitted
+                  })
+
+
+def displaybooks(request):
+    books = Book.objects.all()
+    for b in books:
+        b.pic_path = b.picture.url[14:]
+    return render(request,
+                  'bookMng/displaybooks.html',
+                  {
+                      'item_list': MainMenu.objects.all(),
+                      'books': books
                   })
 
