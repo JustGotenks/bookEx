@@ -1,8 +1,10 @@
 # **BookEx project** #
 
-### **Updating Pycharm** ###
-Run one line at a time, from top to bottom
-```python
+### **Update Migrations** ###
+Only need to update migrations when models.py has been changed ([more info](https://docs.djangoproject.com/en/3.1/topics/migrations/#module-django.db.migrations))
+
+Run one line at a time, from top to bottom. 
+```
 cd /PythonSpace/bookEx
 python manage.py check
 python manage.py makemigrations
@@ -11,6 +13,26 @@ python manage.py migrate
 .
 
 ## **Latest Changes** ##
+
+#### *04/13/21* ####
+- updated [**`postbook()`**](https://github.com/iGotenks/bookEx/blob/main/bookMng/views.py#L33-L38) function to create `book.username` variable in views.py
+- updated [**displaybooks.html**](https://github.com/iGotenks/bookEx/blob/main/bookEx/templates/bookMng/displaybooks.html#L33-L35) to show `book.username` in table
+- added [**`@login_required`**](https://github.com/iGotenks/bookEx/blob/main/bookMng/views.py#L27) to `postbook` and `displaybooks` in views.py ([more info](https://docs.djangoproject.com/en/3.1/topics/auth/default/#the-login-required-decorator))
+    - added import
+        ```
+        from django.contrib.auth.decorators import login_required
+        ```
+- added [**book_detail**](https://github.com/iGotenks/bookEx/blob/main/bookMng/urls.py#L6) path to urls.py
+- added [**`book_detail()`**](https://github.com/iGotenks/bookEx/blob/main/bookMng/views.py#L79-L88) function to views.py
+- created [**book_detail.html**](https://github.com/iGotenks/bookEx/blob/main/bookEx/templates/bookMng/book_detail.html) file
+- Login as admin, click '+ Add' (next to 'Main menus')
+    - Item: ```My Books```
+    - Link: ```/mybooks```
+- added [**`mybooks()`**](https://github.com/iGotenks/bookEx/blob/main/bookMng/views.py#L66-L76) function to views.py
+- added [**mybooks**](https://github.com/iGotenks/bookEx/blob/main/bookMng/urls.py#L8) path to urls.py
+- created [**mybooks.html**](https://github.com/iGotenks/bookEx/blob/main/bookEx/templates/bookMng/mybooks.html) file
+
+
 
 #### *04/06/21* ####
 - added [**`Register()`**](https://github.com/iGotenks/bookEx/blob/main/bookMng/views.py#L58-L65) class to views.py
