@@ -14,6 +14,14 @@ python manage.py migrate
 
 ## **Latest Changes** ##
 
+#### *04/20/21* ####
+- added [**`book_delete()`**](https://github.com/iGotenks/bookEx/blob/main/bookMng/views.py#L91-L100) function to views.py
+- added [**book_delete**](https://github.com/iGotenks/bookEx/blob/main/bookMng/urls.py#L7) path to urls.py
+- created [**book_delete.html**](https://github.com/iGotenks/bookEx/blob/main/bookEx/templates/bookMng/book_delete.html) file
+- updated [**mybooks.html**](https://github.com/iGotenks/bookEx/blob/main/bookEx/templates/bookMng/mybooks.html#L36-L38) to add `delete` functionality to table
+
+
+
 #### *04/13/21* ####
 - updated [**`postbook()`**](https://github.com/iGotenks/bookEx/blob/main/bookMng/views.py#L33-L38) function to create `book.username` variable in views.py
 - updated [**displaybooks.html**](https://github.com/iGotenks/bookEx/blob/main/bookEx/templates/bookMng/displaybooks.html#L33-L35) to show `book.username` in table
